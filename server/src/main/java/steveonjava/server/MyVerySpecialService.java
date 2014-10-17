@@ -1,5 +1,7 @@
 package steveonjava.server;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,5 +32,11 @@ public class MyVerySpecialService {
         sessionFactory.getCurrentSession().save(myEntity);
         int entityCount = sessionFactory.getCurrentSession().createCriteria(MyEntity.class).list().size();
         System.out.println("NOW I HAVE "+entityCount+" MY ENTITIES...BOOHOO!!!!");
+	}
+
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true)
+	public List<Customer> getAllEntities() {
+		return sessionFactory.getCurrentSession().createCriteria(MyEntity.class).list();
 	}
 }
