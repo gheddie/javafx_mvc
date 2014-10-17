@@ -60,6 +60,7 @@ public class CustomerDataScreen extends StackPane {
 
     private Node createToolbar() {
         Button removeButton;
+        Button testButton;
         ToolBar toolBar = ToolBarBuilder.create()
             .items(
                 ButtonBuilder.create()
@@ -83,7 +84,20 @@ public class CustomerDataScreen extends StackPane {
                             }
                         }
                     })
-                    .build()
+                    .build(),
+                    testButton = ButtonBuilder.create()
+                    .text("Test")
+                    .onAction(new EventHandler<ActionEvent>() {
+                        public void handle(ActionEvent actionEvent) {                        	
+                        	try {
+                        		System.out.println("handling ### testButton ### ");
+                        		controller.test();
+							} catch (AccessDeniedException e) {
+								System.out.println("sorry...for employees only...");
+							}                        	
+                        }
+                    })
+                    .build()                    
             )
             .build();
         removeButton.disableProperty().bind(tableView.getSelectionModel().selectedItemProperty().isNull());

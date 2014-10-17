@@ -53,6 +53,11 @@ public class CustomerDataScreenController {
     public ObservableList<Customer> getCustomers() {
         return customerModel.getCustomers();
     }
+    
+    @Secured({"ROLE_EMPLOYEE"})
+	public void test() {
+    	screens.simpleJavaFxSpringTestDialog().show();		
+	}
 
     @Secured({"ROLE_MANAGER", "ROLE_EMPLOYEE"})
     public void addCustomer() {

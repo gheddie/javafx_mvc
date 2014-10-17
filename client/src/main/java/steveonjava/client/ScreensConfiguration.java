@@ -76,15 +76,27 @@ public class ScreensConfiguration {
     @Scope("prototype")
     FXMLDialog addCustomerDialog() {
         return new FXMLDialog(addCustomerController(), getClass().getResource("AddCustomer.fxml"), primaryStage);
-    }
+    }    
 
     @Bean
     @Scope("prototype")
     AddCustomerController addCustomerController() {
         return new AddCustomerController();
     }
+    
+    @Bean
+    @Scope("prototype")
+    FXMLDialog simpleJavaFxSpringTestDialog() {
+        return new FXMLDialog(simpleJavaFxSpringTestController(), getClass().getResource("SimpleJavaFxSpringTest.fxml"), primaryStage);
+    }
 
     @Bean
+    @Scope("prototype")
+    SimpleJavaFxSpringTestController simpleJavaFxSpringTestController() {
+		return new SimpleJavaFxSpringTestController();
+	}
+
+	@Bean
     @Scope("prototype")
     FXMLDialog loginDialog() {
         return new FXMLDialog(loginController(), getClass().getResource("Login.fxml"), primaryStage, StageStyle.UNDECORATED);
