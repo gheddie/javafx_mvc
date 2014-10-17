@@ -41,6 +41,9 @@ public class CustomerApiController {
 
     @Autowired
     private CustomerService customerService;
+    
+    @Autowired
+    private MyVerySpecialService myVerySpecialService;
 
     @ResponseBody
     @RequestMapping(value = "/customer/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -59,7 +62,8 @@ public class CustomerApiController {
     public Integer addCustomer(@Valid @RequestBody Customer customer) {
     	System.out.println("adding customer...");
         customer = customerService.createCustomer(customer.getFirstName(), customer.getLastName(), customer.getSignupDate());
-        customerService.createMyEntity();
+        myVerySpecialService.createMyEntity();
+        myVerySpecialService.helloOnService();
         return customer.getId();
     }
 

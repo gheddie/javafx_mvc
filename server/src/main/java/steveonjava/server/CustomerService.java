@@ -37,8 +37,10 @@ import java.util.List;
 
 @Transactional
 public class CustomerService {
+	
     CustomerService() {
     }
+    
     public CustomerService(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
@@ -82,13 +84,5 @@ public class CustomerService {
         customer.setSignupDate(birthday);
         customer.setFirstName(fn);
         sessionFactory.getCurrentSession().update(customer);
-    }
-    
-	public void createMyEntity() {
-        MyEntity myEntity = new MyEntity();
-        myEntity.setSomeEntityValue("pupsklaus123");
-        sessionFactory.getCurrentSession().save(myEntity);
-        int entityCount = sessionFactory.getCurrentSession().createCriteria(MyEntity.class).list().size();
-        System.out.println("NOW I HAVE "+entityCount+" MY ENTITIES...BOOHOO!!!!");
-	}
+    }    
 }

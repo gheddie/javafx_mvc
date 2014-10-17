@@ -60,6 +60,11 @@ public class ServicesConfiguration {
     public CustomerService customerService() throws Exception {
         return new CustomerService(this.sessionFactory());
     }
+    
+    @Bean
+    public MyVerySpecialService myVerySpecialService() throws Exception {
+        return new MyVerySpecialService(this.sessionFactory());
+    }
 
     @Bean
     @SuppressWarnings("deprecation")
