@@ -107,4 +107,5 @@ public class ScreensConfiguration {
     LoginController loginController() {
         return new LoginController(this);
     }
+    
 }
