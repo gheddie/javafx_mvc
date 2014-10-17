@@ -3,7 +3,12 @@ package steveonjava.client;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class SimpleJavaFxSpringTestController implements DialogController {
+	
+    @Autowired
+    private SimpleJavaFxSpringTestModel model;
 
 	private FXMLDialog dialog;
 	
@@ -15,8 +20,8 @@ public class SimpleJavaFxSpringTestController implements DialogController {
 	}
 	
     @FXML
-    public void testMoo() {
-    	System.out.println("hello from test123 (value='"+someTestWireUp.getText()+"')...");
-//        dialog.close();
+    public void testMoo() {    	
+    	model.acceptValue(someTestWireUp.getText());
+        dialog.close();
     }
 }

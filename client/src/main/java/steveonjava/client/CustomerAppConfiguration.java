@@ -42,6 +42,13 @@ import java.util.Collections;
 @Import(ScreensConfiguration.class)
 @ImportResource("classpath:applicationContext-security.xml")
 public class CustomerAppConfiguration {
+	
+    @Bean
+    SimpleJavaFxSpringTestModel simpleJavaFxSpringTestModel() throws IOException {
+        SimpleJavaFxSpringTestModel customerModel = new SimpleJavaFxSpringTestModel();
+        return customerModel;
+    }
+	
     @Bean
     CustomerModel customerModel() throws IOException {
         CustomerModel customerModel = new CustomerModel();
