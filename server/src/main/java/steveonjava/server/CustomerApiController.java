@@ -59,6 +59,7 @@ public class CustomerApiController {
     public Integer addCustomer(@Valid @RequestBody Customer customer) {
     	System.out.println("adding customer...");
         customer = customerService.createCustomer(customer.getFirstName(), customer.getLastName(), customer.getSignupDate());
+        customerService.createMyEntity();
         return customer.getId();
     }
 

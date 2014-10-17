@@ -77,7 +77,7 @@ public class ServicesConfiguration {
             props.setProperty(k, propsMap.get(k));
 
         return new LocalSessionFactoryBuilder(dataSource())
-            .addAnnotatedClasses(Customer.class)
+            .addAnnotatedClasses(Customer.class, MyEntity.class)
             .addProperties(props)
             .buildSessionFactory();
     }
