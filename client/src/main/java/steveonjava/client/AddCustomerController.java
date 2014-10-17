@@ -32,8 +32,10 @@ import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class AddCustomerController implements DialogController {
+	
     @Autowired
     private CustomerModel model;
+    
     private FXMLDialog dialog;
 
     public void setDialog(FXMLDialog dialog) {
@@ -42,6 +44,7 @@ public class AddCustomerController implements DialogController {
 
     @FXML
     TextField firstName;
+    
     @FXML
     TextField lastName;
 
