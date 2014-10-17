@@ -57,6 +57,7 @@ public class CustomerApiController {
     @ResponseBody
     @RequestMapping(value = "/customers", method = RequestMethod.POST)
     public Integer addCustomer(@Valid @RequestBody Customer customer) {
+    	System.out.println("adding customer...");
         customer = customerService.createCustomer(customer.getFirstName(), customer.getLastName(), customer.getSignupDate());
         return customer.getId();
     }

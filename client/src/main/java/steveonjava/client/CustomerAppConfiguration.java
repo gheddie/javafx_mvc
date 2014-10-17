@@ -46,6 +46,7 @@ public class CustomerAppConfiguration {
     @Bean
     SimpleJavaFxSpringTestModel simpleJavaFxSpringTestModel() throws IOException {
         SimpleJavaFxSpringTestModel customerModel = new SimpleJavaFxSpringTestModel();
+        customerModel.setRestTemplate(restTemplate());
         return customerModel;
     }
 	
