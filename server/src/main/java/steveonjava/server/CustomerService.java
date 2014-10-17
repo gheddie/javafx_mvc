@@ -89,6 +89,6 @@ public class CustomerService {
         myEntity.setSomeEntityValue("pupsklaus123");
         sessionFactory.getCurrentSession().save(myEntity);
         int entityCount = sessionFactory.getCurrentSession().createCriteria(MyEntity.class).list().size();
-        System.out.println("NOW I HAVE "+entityCount+" MY ENTITIES...");
+        System.out.println("NOW I HAVE "+entityCount+" MY ENTITIES...BOOHOO!!!!");
 	}
 }
