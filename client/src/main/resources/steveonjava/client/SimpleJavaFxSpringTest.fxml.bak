@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml" fx:controller="steveonjava.client.SimpleJavaFxSpringTestController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml">
   <children>
     <GridPane layoutX="250.0" layoutY="185.0">
       <children>
-        <Button mnemonicParsing="false" onAction="#testMoo" text="Test" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+        <Button mnemonicParsing="false" text="Test" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
