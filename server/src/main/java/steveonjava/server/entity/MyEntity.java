@@ -1,4 +1,4 @@
-package steveonjava.server;
+package steveonjava.server.entity;
 
 import java.io.Serializable;
 

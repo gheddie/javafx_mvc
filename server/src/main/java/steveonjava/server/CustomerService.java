@@ -27,13 +27,15 @@
 
 package steveonjava.server;
 
+import java.util.Date;
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.List;
+import steveonjava.server.entity.Customer;
 
 @Transactional
 public class CustomerService {

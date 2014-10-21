@@ -27,6 +27,13 @@
 
 package steveonjava.server;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.sql.DataSource;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.dialect.H2Dialect;
 import org.springframework.cache.Cache;
@@ -44,11 +51,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import javax.sql.DataSource;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import steveonjava.server.entity.Bill;
+import steveonjava.server.entity.BillPosition;
+import steveonjava.server.entity.Customer;
+import steveonjava.server.entity.MyEntity;
 
 @Configuration
 @EnableCaching
@@ -82,7 +88,7 @@ public class ServicesConfiguration {
             props.setProperty(k, propsMap.get(k));
 
         return new LocalSessionFactoryBuilder(dataSource())
-            .addAnnotatedClasses(Customer.class, MyEntity.class)
+            .addAnnotatedClasses(Customer.class, MyEntity.class, Bill.class, BillPosition.class)
             .addProperties(props)
             .buildSessionFactory();
     }
