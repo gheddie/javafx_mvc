@@ -21,4 +21,11 @@ public class EddiesCustomApiController {
     public List<Customer> customers() {
         return this.myVerySpecialService.getAllEntities();
     }
+    
+    @ResponseBody
+    @RequestMapping(value = "/quetsch", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void someSimpleBLMethod() {
+    	System.out.println("bl invoked...");
+    	myVerySpecialService.createMyEntity();
+    }
 }

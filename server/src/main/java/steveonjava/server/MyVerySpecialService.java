@@ -28,7 +28,7 @@ public class MyVerySpecialService {
 	
 	public void createMyEntity() {
         MyEntity myEntity = new MyEntity();
-        myEntity.setSomeEntityValue("pupsklaus123");
+        myEntity.setSomeEntityValue("invoked from bl...");
         sessionFactory.getCurrentSession().save(myEntity);
         int entityCount = sessionFactory.getCurrentSession().createCriteria(MyEntity.class).list().size();
         System.out.println("NOW I HAVE "+entityCount+" MY ENTITIES...BOOHOO!!!!");
